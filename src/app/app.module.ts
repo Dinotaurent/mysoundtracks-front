@@ -9,6 +9,7 @@ import { AlbumComponent } from './components/album/album.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { CancionComponent } from './components/cancion/cancion.component';
 import { GeneroComponent } from './components/genero/genero.component';
+import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GeneroComponent } from './components/genero/genero.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

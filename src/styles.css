@@ -1,4 +1,166 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  position: relative;
+  /* overflow: hidden;  */
+}
+
+main {
+  /* background-color: #000029; */
+  /* border: 10px solid red; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* height: 100%; */
+}
+
+.parent {
+  display: grid;
+  grid:
+    "header" auto
+    "main" auto
+    "footer " 60px;
+}
+
+nav {
+    /* background: linear-gradient(90deg, #321212, #333d8a); */
+    background: linear-gradient(90deg, #48079c, #3739a1, #6b11e0);
+    animation: gradient 4s ease infinite;
+    background-size: 200% 200%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+nav .navbar-brand {
+  font-size: 2em;
+  font-weight: 900;
+  color: #efb810;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  transition: 0.4s;
+}
+
+nav .nav-link {
+  color: #ebd081;
+  font-size: 18px;
+  font-weight: 400;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+li.nav-item .nav-link.active {
+  color: #df7646;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+a.nav-link:hover {
+  color: #3cebc5;
+  transition: 0.4s;
+}
+
+a.navbar-brand:hover {
+  color: #ebd081;
+  font-size: 34px;
+  font-weight: 900;
+  transition: 0.2s;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.container {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* border: 10px solid red; */
+}
+
+.grid-container {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: space-evenly;
+    /* height: 100%; */
+    /* border: 10px solid red; */
+  }
+
+  /* main {
+    background: linear-gradient(-45deg, #6303C9, #3D2655, #7D708B, #5F00C4);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+   */
+   html {
+    height:100%;
+    }
+ 
+    .bg {
+    animation:slide 4s ease-in-out infinite alternate;
+    background: linear-gradient(48deg, rgb(7, 4, 20) 42%, rgb(12, 7, 34) 42%);
+    bottom:0;
+    left:-50%;
+    opacity:.6;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+    }
+    
+    .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:6s;
+    }
+    
+    .bg3 {
+    animation-duration:7s;
+    }
+    
+    @keyframes slide {
+    0% {
+    transform:translateX(-25%);
+    }
+    
+    
+    100% {
+    transform:translateX(25%);
+    }
+    }
+    
+   
