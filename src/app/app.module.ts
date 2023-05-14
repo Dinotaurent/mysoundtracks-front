@@ -10,6 +10,13 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { CancionComponent } from './components/cancion/cancion.component';
 import { GeneroComponent } from './components/genero/genero.component';
 import { LayoutModule } from './layout/layout.module';
+import { ArtistaFormComponent } from './components/artista/artista-form.component';
+import { AlbumFormComponent } from './components/album/album-form.component';
+import { CancionFormComponent } from './components/cancion/cancion-form.component';
+import { GeneroFormComponent } from './components/genero/genero-form.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -19,12 +26,18 @@ import { LayoutModule } from './layout/layout.module';
     ArtistaComponent,
     CancionComponent,
     GeneroComponent,
+    GeneroFormComponent,
+    ArtistaFormComponent,
+    AlbumFormComponent,
+    CancionFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    MatPaginatorModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
