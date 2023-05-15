@@ -1,5 +1,5 @@
 import { GeneroService } from 'src/app/services/genero.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonsListarComponent } from '../commons-listar.component';
 import { URL_BASE } from 'src/app/config/app';
 import { Genero } from 'src/app/models/genero';
