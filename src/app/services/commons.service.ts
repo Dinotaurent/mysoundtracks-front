@@ -33,10 +33,26 @@ export abstract class CommonsService<E extends Generic> {
     });
   }
 
+  public crearConFoto(e: E, archivo: File): Observable<E>{
+    const formData = new FormData();
+    formData.append('archivo', archivo);
+    formData.append('nombre', e.nombre);
+
+    return this.http.post<E>(`${this.URL}crear-con-foto`, formData);
+  }
+
   public editar(e: E): Observable<E> {
     return this.http.put<E>(`${this.URL}${e.id}`, e, {
       headers: this.headers,
     });
+  }
+
+  public editarConFoto(e: E, archivo: File): Observable<E>{
+    const formData = new FormData();
+    formData.append('archivo', archivo);
+    formData.append('nombre', e.nombre);
+
+    return this.http.put<E>(`${this.URL}actualizar-con-foto/${e.id}`, formData);
   }
 
   public eliminar(id: number): Observable<void> {

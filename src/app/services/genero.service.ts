@@ -16,13 +16,13 @@ export class GeneroService extends CommonsService<Genero> {
     this.URL = `${URL_BASE}generos/`;
   }
 
-  crearConFoto(genero: Genero, archivo: File): Observable<Genero> {
-    const formData = new FormData();
-    formData.append('nombre', genero.nombre);
-    formData.append('archivo', archivo);
+  // crearConFoto(genero: Genero, archivo: File): Observable<Genero> {
+  //   const formData = new FormData();
+  //   formData.append('nombre', genero.nombre);
+  //   formData.append('archivo', archivo);
 
-    return this.http.post<Genero>(`${this.URL}crear-con-foto`, formData);
-  }
+  //   return this.http.post<Genero>(`${this.URL}crear-con-foto`, formData);
+  // }
 
   asignarAlbumes(genero: Genero, albumes: Album[]): Observable<Genero> {
     return this.http.put<Genero>(

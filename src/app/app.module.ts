@@ -15,6 +15,7 @@ import { AlbumFormComponent } from './components/album/album-form.component';
 import { CancionFormComponent } from './components/cancion/cancion-form.component';
 import { GeneroFormComponent } from './components/genero/genero-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -37,6 +38,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BrowserAnimationsModule,
     LayoutModule,
     MatPaginatorModule,
+    FormsModule,
     HttpClientModule,
   ],
   providers: [],

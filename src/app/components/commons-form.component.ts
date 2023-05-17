@@ -13,6 +13,7 @@ export abstract class CommonsFormComponent<
   titulo: string;
   model: E;
   error: any;
+  fotoSeleccionada: File;
   protected rutaRedirect: string;
   protected nombreEntity: string;
 
@@ -32,8 +33,42 @@ export abstract class CommonsFormComponent<
     });
   }
 
+  subirFoto(event): void {
+    this.fotoSeleccionada = event.target.files[0];
+
+    if (this.fotoSeleccionada.type.indexOf('image') < 0) {
+      this.fotoSeleccionada = null;
+      Swal.fire({
+        icon: 'error',
+        text: 'La foto debe ser un tipo valido ejemplo: PNG,JPG',
+      });
+    }
+  }
+
   crear(): void {
     this.service.crear(this.model).subscribe(
+      (model) => {
+        this.router.navigate([this.rutaRedirect]);
+        Swal.fire(
+          `${this.nombreEntity} ${model.nombre}`,
+          'registrado con exito',
+          'success'
+        );
+      },
+      (err) => {
+        if (err.status == 400) {
+          this.error = err.error;
+          Swal.fire({
+            icon: 'error',
+            title: 'Campos incorrectos',
+          });
+        }
+      }
+    );
+  }
+
+  crearConFoto(e: E, archivo: File): void {
+    this.service.crearConFoto(this.model, this.fotoSeleccionada).subscribe(
       (model) => {
         this.router.navigate([this.rutaRedirect]);
         Swal.fire(
@@ -66,7 +101,7 @@ export abstract class CommonsFormComponent<
         this.service.editar(this.model).subscribe(
           (model) => {
             this.router.navigate([this.rutaRedirect]);
-            Swal.fire('Actualizado', '', 'success');
+            Swal.fire('Actualizado!', `${this.model.nombre} fue actualizado correctamente`, 'success');
           },
           (err) => {
             if (err.status == 400) {
@@ -83,5 +118,24 @@ export abstract class CommonsFormComponent<
         Swal.fire('No se aplicaron los cambios', '', 'info');
       }
     });
+  }
+
+  editarConFoto(e: E, archivo: File): void {
+    this.service.editarConFoto(this.model, this.fotoSeleccionada).subscribe(
+      (model) => {
+        this.router.navigate([this.rutaRedirect]);
+        Swal.fire('Actualizado', '', 'success');
+      },
+      (err) => {
+        if (err.status == 400) {
+          this.error = err.error;
+          console.log(this.error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Campos incorrectos',
+          });
+        }
+      }
+    );
   }
 }

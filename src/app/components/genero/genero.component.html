@@ -1,8 +1,4 @@
-<button
-  type="button-agregar"
-  class="btn btn-success"
-  routerLink="/generos/form"
->
+<button class="btn btn-success" routerLink="/generos/form">
   Nuevo
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -20,12 +16,18 @@
   </svg>
 </button>
 
-
-
-<div class="mb-3 m-5"><h1 class="titulo1">Lista de generos musicales</h1>
-  <div class="col-md-2">
-    <input class="form-control m-4" type="search" matInput placeholder="Buscar genero"  (keyup)="filtrar($event)" />
-  </div></div>
+<div class="mb-3 m-5">
+  <h1 class="titulo1">Lista de generos musicales</h1>
+  <div class="buscar col-md-2">
+    <input
+      class="form-control m-4"
+      type="search"
+      matInput
+      placeholder="Buscar genero"
+      (keyup)="filtrar($event)"
+    />
+  </div>
+</div>
 
 <div class="grid-container">
   <div
@@ -38,22 +40,22 @@
 
   <div class="cardG" *ngFor="let genero of listaFiltrada">
     <img
-        [src]="
-          genero?.fotoHashCode
-            ? URL +
-              'ver-foto/' +
-              genero.id +
-              '?fotoHashCode=' +
-              genero.fotoHashCode
-            : 'assets/img/no-foto.jpg'
-        "
-        class="card-img-top"
-      />
+      [src]="
+        genero?.fotoHashCode
+          ? URL +
+            'ver-foto/' +
+            genero.id +
+            '?fotoHashCode=' +
+            genero.fotoHashCode
+          : 'assets/img/no-foto.jpg'
+      "
+      class="card-img-top"
+    />
     <div class="descriptions">
       <h1>{{ genero.nombre }}</h1>
       <h2>Albumes: {{ genero.albumes.length }}</h2>
       <h2>Canciones: {{ genero.canciones.length }}</h2>
-      <a class="btn btn-warning"
+      <a class="btn btn-warning" [routerLink]="['/generos/form', genero.id]"
         >Editar
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +72,7 @@
           />
         </svg>
       </a>
-      <a class="btn btn-danger" 
+      <a class="btn btn-danger" (click)="eliminar(genero)"
         >Eliminar<svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

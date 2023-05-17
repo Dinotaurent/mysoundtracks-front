@@ -142,25 +142,6 @@ div.container2 {
   opacity: 0.7;
 }
 
-/* main {
-    background: linear-gradient(-45deg, #6303C9, #3D2655, #7D708B, #5F00C4);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    height: 100vh;
-  }
-  
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-   */
 html {
   height: 100%;
 }
@@ -255,7 +236,6 @@ div.card4 > .container3:after {
 }
 
 button.btn-success {
-  /* background-color: #99E58D; */
   background-color: #aff150;
   color: black;
   padding: 8px 8px 10px 8px;
@@ -273,7 +253,7 @@ button.btn-success:hover {
   transition: 0.4s;
 }
 
-a.btn-primary {
+button.btn-primary {
   background-color: #4cccef;
   color: black;
   top: 8px;
@@ -281,6 +261,12 @@ a.btn-primary {
   right: 8px;
   bottom: 8px;
   margin: 20px;
+  transition: 0.6s;
+}
+
+button.btn-primary:hover {
+  border-radius: 10% / 50%;
+  transition: 0.4s;
 }
 
 a.btn-warning {
@@ -316,6 +302,24 @@ a.btn-danger:hover {
   border-radius: 10% / 50%;
   transition: 0.4s;
 }
+
+button.btn-secondary {
+  background-color: #a480fa;
+  color: black;
+  padding: 8px 8px 10px 8px;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  margin: 20px;
+  transition: 0.6s;
+}
+
+button.btn-secondary:hover {
+  border-radius: 10% / 50%;
+  transition: 0.4s;
+}
+
 
 div.details > h1 {
   color: #e2d09c;
@@ -442,3 +446,41 @@ svg {
   width: 35px;
   height: 30px;
 }
+
+div img.img-thumbnail {
+  width: 286px;
+  height: 215px;
+  border-radius: 30px;
+}
+
+form {
+  color: #aff150;
+  font-size: 22px;
+  font-weight: 400;
+  width: 85%;
+  border: 3px solid #3434f5;
+  border-radius: 30px;
+  background-color: #ff68681a;
+
+}
+
+div.buscar{
+  height: 80px;
+  border-radius: 30px;
+}
+
+
+div.buscar input.form-control {
+  transition: 0.4s;
+  width: 0px;
+}
+
+ .buscar:hover > .form-control {
+  width: 240px;
+  padding: 0 6px;
+  top: 50px;
+  height: 40px;
+
+}
+
+
