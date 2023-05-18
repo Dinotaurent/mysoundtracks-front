@@ -16,7 +16,7 @@
   </svg>
 </button>
 
-<div class="mb-3 m-5">
+<!-- <div class="mb-3 m-5">
   <h1 class="titulo1">Lista de generos musicales</h1>
   <div class="buscar col-md-2">
     <input
@@ -26,6 +26,22 @@
       placeholder="Buscar genero"
       (keyup)="filtrar($event)"
     />
+  </div>
+</div> -->
+<div class="cabecera">
+  <h1 class="titulo1">Lista de géneros musicales</h1>
+</div>
+<div class="cabecera">
+  <div class="searchBox">
+    <input
+      class="searchInput"
+      type="text"
+      placeholder="Buscar género"
+      (keyup)="filtrar($event)"
+    />
+    <button class="searchButton" href="#">
+      <i class="material-icons">search</i>
+    </button>
   </div>
 </div>
 
