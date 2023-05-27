@@ -75,7 +75,7 @@ nav .nav-link {
 }
 
 li.nav-item .nav-link.active {
-  color: #df4653;
+  color: #ff005d;
   font-size: 20px;
   font-weight: 800;
   transition: 0.4s;
@@ -303,6 +303,42 @@ a.btn-danger:hover {
   transition: 0.4s;
 }
 
+a.btn-danger2 {
+  color: white;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  margin: 10px;
+  transition: 0.4s;
+  background: linear-gradient(90deg, #402e74, #b30136);
+  background-size: 400% 400%;
+  animation: anim 2.8s infinite ease-in-out;
+  width: 100px;
+  height: 60px;
+  border: solid 2px;
+}
+
+a.btn-danger2:hover {
+  border-radius: 20% / 60%;
+  transition: 0.4s;
+  width: 106px;
+  height: 66px;
+  border-color: black;
+}
+
+@keyframes anim {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 button.btn-secondary {
   background-color: #a480fa;
   color: black;
@@ -318,6 +354,31 @@ button.btn-secondary {
 button.btn-secondary:hover {
   border-radius: 10% / 50%;
   transition: 0.4s;
+}
+
+button.btn-secondary2 {
+  background-color: #1f0264;
+  color: #ebd081;
+  padding: 8px 8px 10px 8px;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  margin: 20px;
+  transition: 0.6s;
+  width: 150px;
+  height: 100px;
+  border-color: #ebd081;
+  border: solid 4px;
+  border-radius: 20px;
+}
+
+button.btn-secondary2:hover {
+  border-radius: 80% / 65%;
+  transition: 0.6s;
+  background-color: #ebd081;
+  color: #1f0264;
+  border-color: #1f0264;
 }
 
 
@@ -413,7 +474,7 @@ div.cardG:hover {
   line-height: 24px;
   height: 70%;
 }
-.cardG button {
+/* .cardG button {
   width: fit-content;
   height: 40px;
   cursor: pointer;
@@ -424,7 +485,7 @@ div.cardG:hover {
   outline: none;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
   transition: all 0.5s ease-in-out;
-}
+} */
 .cardG button:hover {
   transform: scale(0.95) translateX(-5px);
   transition: all 0.5s ease-in-out;
@@ -469,8 +530,8 @@ form {
   top: 50%;
   left: 50%;
   transform:  translate(-50%,50%);
-  background: #2f3640;
-  height: 40px;
+  background: #e2d09c;
+  height: 60px;
   border-radius: 40px;
   padding: 0px;
 }
@@ -481,17 +542,17 @@ form {
 }
 
 .searchBox:hover > .searchButton {
-  background: white;
-  color : #2f3640;
+  background: #0e1b46;
+  color : #e2d09c;
 }
 
 .searchButton {
-    color: white;
+    color: #0e1b46;
     float: right;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: #2f3640;
+    background: #e2d09c;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -504,10 +565,10 @@ form {
   outline:none;
   float:left;
   padding: 0;
-  color: white;
+  color: #0e1b46;
   font-size: 16px;
   transition: 0.4s;
-  line-height: 40px;
+  line-height: 60px;
   width: 0px;
 
 }
@@ -525,4 +586,14 @@ form {
     flex-wrap: wrap;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     /* border: 10px solid red; */
+  }
+
+  mat-tab-group {
+    min-width: 600px;
+    min-height: auto;
+  }
+
+  mat-card {
+    margin: 60px;
+    text-align: center;
   }

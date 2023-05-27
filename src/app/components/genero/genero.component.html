@@ -15,19 +15,6 @@
     />
   </svg>
 </button>
-
-<!-- <div class="mb-3 m-5">
-  <h1 class="titulo1">Lista de generos musicales</h1>
-  <div class="buscar col-md-2">
-    <input
-      class="form-control m-4"
-      type="search"
-      matInput
-      placeholder="Buscar genero"
-      (keyup)="filtrar($event)"
-    />
-  </div>
-</div> -->
 <div class="cabecera">
   <h1 class="titulo1">Lista de géneros musicales</h1>
 </div>
@@ -40,7 +27,7 @@
       (keyup)="filtrar($event)"
     />
     <button class="searchButton" href="#">
-      <i class="material-icons">search</i>
+      <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
     </button>
   </div>
 </div>
@@ -50,7 +37,7 @@
     class="alert alert-info m-5"
     *ngIf="lista == undefined || lista.length == 0"
   >
-    No existen generos musicales registrados o no se pudo conectar a la base de
+    No existen géneros musicales registrados o no se pudo conectar a la base de
     datos
   </div>
 
@@ -69,8 +56,13 @@
     />
     <div class="descriptions">
       <h1>{{ genero.nombre }}</h1>
-      <h2>Albumes: {{ genero.albumes.length }}</h2>
-      <h2>Canciones: {{ genero.canciones.length }}</h2>
+      <button
+        class="btn btn-secondary2"
+        [routerLink]="['/generos/asignar-artistas/', genero.id]"
+      >
+        <h2>Artistas: ({{ genero.artistas.length }})</h2>
+        <i class="fa-solid fa-eye fa-2xl"></i>
+      </button>
       <a class="btn btn-warning" [routerLink]="['/generos/form', genero.id]"
         >Editar
         <svg

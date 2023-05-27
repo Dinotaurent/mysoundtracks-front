@@ -21,7 +21,7 @@ export class GeneroFormComponent extends CommonsFormComponent<
     this.model = new Genero();
     this.rutaRedirect = '/generos';
     this.nombreEntity = Genero.name;
-    this.titulo = 'Registrar nuevo genero musical';
+    this.titulo = 'Registrar nuevo género musical';
   }
 
   @HostListener('document:keydown', ['$event'])

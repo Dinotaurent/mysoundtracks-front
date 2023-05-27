@@ -4,8 +4,7 @@ import { Genero } from '../models/genero';
 import { HttpClient } from '@angular/common/http';
 import { URL_BASE } from '../config/app';
 import { Observable } from 'rxjs';
-import { Album } from '../models/album';
-import { Cancion } from '../models/cancion';
+import { Artista } from '../models/artista';
 
 @Injectable({
   providedIn: 'root',
@@ -16,43 +15,27 @@ export class GeneroService extends CommonsService<Genero> {
     this.URL = `${URL_BASE}generos/`;
   }
 
-  // crearConFoto(genero: Genero, archivo: File): Observable<Genero> {
-  //   const formData = new FormData();
-  //   formData.append('nombre', genero.nombre);
-  //   formData.append('archivo', archivo);
-
-  //   return this.http.post<Genero>(`${this.URL}crear-con-foto`, formData);
-  // }
-
-  asignarAlbumes(genero: Genero, albumes: Album[]): Observable<Genero> {
+  asignarArtistas(generoId: number, artistas: Artista[]): Observable<Genero> {
     return this.http.put<Genero>(
-      `${this.URL}${genero.id}/asignar-albumes`,
-      albumes,
+      `${this.URL}${generoId}/asignar-artistas`,
+      artistas,
       { headers: this.headers }
     );
   }
 
-  removerAlbum(genero: Genero, album: Album): Observable<Genero> {
+  removerArtista(generoId: number, artista: Artista): Observable<Genero> {
     return this.http.put<Genero>(
-      `${this.URL}${genero.id}/remover-album`,
-      album,
+      `${this.URL}${generoId}/remover-artista`,
+      artista,
       { headers: this.headers }
     );
   }
 
-  asignarCanciones(genero: Genero, canciones: Cancion[]): Observable<Genero> {
+  removerTodos(id: number): Observable<Genero>{
     return this.http.put<Genero>(
-      `${this.URL}${genero.id}/asignar-canciones`,
-      canciones,
+      `${this.URL}${id}/remover-todos`,
       { headers: this.headers }
     );
   }
 
-  removerCancion(genero: Genero, cancion: Cancion): Observable<Genero> {
-    return this.http.put<Genero>(
-      `${this.URL}${genero.id}/remover-cancion`,
-      cancion,
-      { headers: this.headers }
-    );
-  }
 }

@@ -9,6 +9,8 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { ArtistaFormComponent } from './components/artista/artista-form.component';
 import { CancionComponent } from './components/cancion/cancion.component';
 import { CancionFormComponent } from './components/cancion/cancion-form.component';
+import { AsignarArtistasComponent } from './components/genero/asignar-artistas.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'inicio' },
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: 'generos', component: GeneroComponent },
   { path: 'generos/form', component: GeneroFormComponent },
   { path: 'generos/form/:id', component: GeneroFormComponent },
+  { path: 'generos/asignar-artistas/:id', component: AsignarArtistasComponent },
   { path: 'albumes', component: AlbumComponent },
   { path: 'albumes/form', component: AlbumFormComponent },
   { path: 'albumes/form/:id', component: AlbumFormComponent },
